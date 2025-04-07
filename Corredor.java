@@ -7,7 +7,10 @@ public class Corredor implements Runnable {
     public void run() {
 
         while(distanciaTotalPercorrida <= distanciaTotalDaCorrida){
+
             distanciaTotalPercorrida += Math.random() * 50;
+            System.out.println(Thread.currentThread().getName() + String.format("%.2f", distanciaTotalPercorrida + " m"));
+            
         }
 
     }
