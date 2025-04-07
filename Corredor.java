@@ -11,6 +11,17 @@ public class Corredor implements Runnable {
             distanciaTotalPercorrida += Math.random() * 50;
             System.out.println(Thread.currentThread().getName() + String.format("%.2f", distanciaTotalPercorrida + " m"));
             
+            if(distanciaTotalPercorrida > distanciaTotalDaCorrida){
+
+                System.out.println(Thread.currentThread().getName() + " Acabou");
+            }
+
+            try{
+                Thread.sleep(2000 + (int) Math.random() * 15000);
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
