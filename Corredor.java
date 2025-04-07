@@ -6,24 +6,21 @@ public class Corredor implements Runnable {
     @Override
     public void run() {
 
-        while(distanciaTotalPercorrida <= distanciaTotalDaCorrida){
-
+        while (distanciaTotalPercorrida <= distanciaTotalDaCorrida) {
             distanciaTotalPercorrida += Math.random() * 50;
-            System.out.println(Thread.currentThread().getName() + String.format("%.2f", distanciaTotalPercorrida + " m"));
             
-            if(distanciaTotalPercorrida > distanciaTotalDaCorrida){
+            System.out.println(Thread.currentThread().getName() + ": " + String.format("%.2f", distanciaTotalPercorrida) + "m");
 
-                System.out.println(Thread.currentThread().getName() + " Acabou");
+            if (distanciaTotalPercorrida > distanciaTotalDaCorrida) {
+                System.out.println(Thread.currentThread().getName() + " acabou.");
             }
 
-            try{
+            try {
                 Thread.sleep(2000 + (int) Math.random() * 15000);
-            }catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
-
     }
-
 }
